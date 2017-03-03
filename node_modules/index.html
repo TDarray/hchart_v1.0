@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset_css.css"/>
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+</head>
+<body>
+<div id="header_layout">
+    <div class="header">
+        <a href="/Article/about.html" class="logo fl"></a>
+        <div class="header_right fr">
+            <div class="english_chinese">
+                <a href="" style=" color: red;">中文</a>
+                <a>|</a>
+                <a href="http://outwit.gotoip11.com/en/">ENGLISH</a>
+            </div>
+            <div class="navigator">
+                <ul>
+                    <li><a href="/Index/index.html" class="nav_one">首页</a></li>
+                    <li class="hover"><a href="/Article/product/id/16.html" class="nav_one">产品与系统</a>
+                        <div class="nav_two" style="display: none;">
+                            <div class="nav_down">
+                                <a href="/Article/product/id/16.html"><span>时域反射分析仪</span></a><a href="/Article/product/id/17.html"><span>频谱分析仪</span></a><a href="/Article/product/id/18.html"><span>信号源</span></a><a href="/Article/product/id/19.html"><span>功能组件及射频模块</span></a><a href="/Article/product/id/20.html"><span>电磁环境安全预警系统</span></a>                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/Article/jiejue/id/9.html" class="nav_one">解决方案</a>
+                        <div class="nav_two" style="display: none;">
+                            <div class="nav_down">
+                                <a href="/Article/jiejue/id/9.html"><span>电磁兼容及信号完整性</span></a><a href="/Article/jiejue/id/10.html"><span>半导体及电路模块测试技术</span></a><a href="/Article/jiejue/id/11.html"><span>模拟仿真系统</span></a><a href="/Article/jiejue/id/12.html"><span>电能源测试技术</span></a><a href="/Article/jiejue/id/13.html"><span>导航制导测试系统</span></a><a href="/Article/jiejue/id/14.html"><span>模块化仪器配套</span></a>                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/Article/jishu.html" class="nav_one">技术支持</a>
+                        <div class="nav_two" style="display: none;">
+                            <div class="nav_down">
+                                <a href="/Article/jishu.html"><span>文档资料库</span></a>
+                                <a href="/Article/jishu2.html"><span>资质证书</span></a>
+                                <a href="/Article/jishu3.html"><span>客户服务</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/Article/about.html" class="nav_one">关于我们</a>
+                        <div class="nav_two" style="display: none;">
+                            <div class="nav_down">
+                                <a href="/Article/about.html"><span>企业介绍</span></a>
+                                <a href="/Article/news.html"><span>新闻资讯</span></a>
+                                <a href="/Job/index.html"><span>工作机会</span></a>
+                                <a href="/Contact/index.html"><span>联系我们</span></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main" style="width: 1300px;height:600px;"></div>
+<div id="controlArea">
+    <div id="cmdArea" class="fl">
+        <select name="selectValue" id="select">
+            <option value=":SENSE:FREQ:CENT ">设置中心频率</option>
+            <option value=":SENSE:FREQ:SPAN ">设置频率跨度</option>
+            <option value=":SENSE:POW:RF:ATT:AUTO ">设置自动开启参考幅度ON|OFF</option>
+            <option value=":SENSE:POW:RLEV ">设置参考幅度</option>
+            <option value=":SENSE:POW:RF:DIV ">设置DIV</option>
+            <option value=":SENSE:BAND:RES ">手动设置RBW</option>
+            <option value=":SENSE:FFT:POIN ">设置FFT点数</option>
+            <option value=":SENSE:SWP:TIME ">设置扫描时间(附单位：秒)</option>
+            <option value=":SENSE:SWP:POIN ">设置扫描点数</option>
+            <option value=":SENSE:DET:FUNC ">设置检波模式NORMAL|NEG|POS|SAMP</option>
+            <option value=":SENSE:BAND:VID ">手动设置VBW</option>
+            <option value=":SENSE:WAT:CS ">设定监测信道</option>
+            <option value=":SENSE:WAT:STAT ">设定是否开启监测OFF|ON</option>
+            <option value=":SENSE:WAT:SLMT:DELTAF ">设定展宽阈值</option>
+            <option value=":SENSE:WAT:SLMT:NEWCAR ">设定新载波出现阈值(实际值*1000)</option>
+            <option value=":SENSE:WAT:SLMT:TOP ">设定上门限值(实际值*1000)</option>
+            <option value=":SENSE:WAT:SLMT:BTM ">设定下门限值(实际值*1000)</option>
+            <option value=":SENSE:WAT:SLMT:DEL ">消失门限值 (实际值*1000)</option>
+            <option value=":SENSE:WAT:SLMT:SETTEMP ">设置生成模板采集帧数</option>
+        </select>
+        <input type="text" name="inputVal" id="val"/>
+        <button id="ck" onclick="tijiao()">提交</button>
+        <p>说明一、值与单位间用“空格”隔开 ;</p>
+        <p>说明二、没有该端口时可不填。</p>
+    </div>
+    <div id="inputArea" class="fl">
+        <span>IP地址:</span>
+        <input type="text" name="IP" id="IP" class="fr"/><br/>
+        <span>CmdPort:</span>
+        <input type="text" name="CmdPort" id="CmdPort" class="fr"/><br/>
+        <span>DataPort:</span>
+        <input type="text" name="DataPort" id="DataPort" class="fr"/><br/>
+        <button id="change" onclick="xiugai()">修改</button>
+    </div>
+</div>
+
+
+<div id="bottom_layout">
+    <div class="bottom">
+        <div class="bottom_left fl">
+            <p>成都奥特为科技有限公司</p>
+            <p>电话:028－61833689</p><p>
+        </p><p>传真:028－61833689</p><p>
+        </p><p>24小时服务电话:028－61833689</p><p>
+        </p><p>邮箱:atw@superoutwit.com</p><p>
+        </p><p>地址:四川省成都市高新区（西区）天欣路13号6号楼2楼</p><p>
+        </p><p>技术支持：成都美誉梦科技有限公司</p>
+
+        </div>
+        <div class="bottom_right fr">
+            <ul>
+                <li><a href="/Article/product/id/16.html"><font>产品与系统</font></a></li>
+                <li><a href="/Article/product/id/16.html">时域反射分析仪</a></li><li><a href="/Article/product/id/17.html">频谱分析仪</a></li><li><a href="/Article/product/id/18.html">信号源</a></li><li><a href="/Article/product/id/19.html">功能组件及射频模块</a></li><li><a href="/Article/product/id/20.html">电磁环境安全预警系统</a></li>
+            </ul>
+            <ul>
+                <li><a href="/Article/jiejue/id/9.html"><font>解决方案</font></a></li>
+                <li><a href="/Article/jiejue/id/9.html">电磁兼容及信号完整性</a></li><li><a href="/Article/jiejue/id/10.html">半导体及电路模块测试技术</a></li><li><a href="/Article/jiejue/id/11.html">模拟仿真系统</a></li><li><a href="/Article/jiejue/id/12.html">电能源测试技术</a></li><li><a href="/Article/jiejue/id/13.html">导航制导测试系统</a></li><li><a href="/Article/jiejue/id/14.html">模块化仪器配套</a></li>            </ul>
+            <ul>
+                <li><a href="/Article/jishu.html"><font>技术支持</font></a></li>
+                <li><a href="/Article/jishu.html">文档资料库</a></li>
+                <li><a href="/Article/jishu2.html">资质证书</a></li>
+                <li><a href="/Article/jishu3.html">客户服务</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="/Article/about.html"><font>关于我们</font></a></li>
+                <li><a href="/Article/about.html">企业介绍</a></li>
+                <li><a href="/Article/news.html">新闻资讯</a></li>
+                <li><a href="/Job/index.html">工作机会</a></li>
+                <li><a href="/Contact/index.html">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/highstock.js"></script>
+<script>
+    var socket = io.connect();
+    //测试返回数据，连接成功
+    socket.on("test", function (data) {
+        //console.log(data);
+    });
+    var option = {
+        chart: {
+            renderTo: 'main',
+            type: 'spline'
+            /* 图标类型 */
+        },
+        title: {
+            text: 'canvas',
+            x: -20 //center
+        },
+
+        xAxis: {
+            categories:[],
+            tickPixelInterval: 200
+        },
+
+        yAxis: {
+            tickInterval: 10, //自定义刻度
+            max: -50, //纵轴的最大值
+            min: -120, //纵轴的最小值
+            title: {
+                text: 'AMPT(dbm)'
+            }
+
+        },
+        series: [{
+            data: []
+        },]
+
+    }
+    var chart =new Highcharts.Chart(option);
+    //接收转发数据，格式json
+    socket.on('pushToWebClient', function (useData) {
+
+        chart.series[0].setData(useData.dbm);
+        chart.series[0].xAxis.categories=useData.hz;
+    });
+    socket.on('disconnect', function() {
+
+    });
+
+
+
+    function tijiao(){
+        var inputValue = null;
+        var index=document.getElementById("select").selectedIndex;
+        var select = document.getElementById("select").options[index].value;
+        var val = document.getElementById("val").value;
+        inputValue=select+val;
+        socket.emit('fromWebClient',inputValue);
+    }
+    function xiugai(){
+        var IPaddr= document.getElementById("IP").value;
+        var CmdPort= document.getElementById("CmdPort").value;
+        var DataPort= document.getElementById("DataPort").value;
+        cmdData={"IPaddr":IPaddr,
+                    "CmdPort":CmdPort,
+                    "DataPort":DataPort
+        };
+        socket.emit('fromCmd',cmdData);
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
