@@ -6,7 +6,7 @@ em,i{ font-style:normal;}
 address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
 img { border:none; }
 ol,ul,li { list-style:none; }
-input, textarea, select, button { font:14px Microsoft Yahei,Verdana,Helvetica,Arial,sans-serif; }
+input, textarea, select, button { font:13px Microsoft Yahei,Verdana,Helvetica,Arial,sans-serif; }
 table { border-collapse:collapse; }
 a:focus, input, select, textarea {outline: 0px;}
 a {text-decoration: none;outline:none;}
